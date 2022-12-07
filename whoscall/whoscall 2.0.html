@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/SherryHsiao.github.io/reset.css">
+    <style>
+        .body{
+            font-family: 'Noto Sans TC', 'Roboto', -apple-system, 'Avenir Next', 'Microsoft JhengHei', '微軟正黑體';
+        }
+
+        .container{
+            padding-top: 53px;
+        }
+
+        /* 最上選單 */
+        .main-header{
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+            /* opacity: 0.6; */
+            position: fixed;
+            top: 0;
+            z-index: 5;
+        }
+        .header-content{
+            width: 940px;
+            display: flex;
+            padding: 0 10px;
+            background-color: white;
+            margin: auto;
+            align-items: center;
+        }
+        .header-content .logo{
+            width: 20%;
+            display: inline-block;
+            padding: 6px 0;
+        }
+        .header-content nav{
+            text-align: left;
+            width: 100%;
+            font-size: 0;
+            padding-left: 10px;
+        }
+        .header-content nav a{            
+            font-size: 15px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            line-height: 52px;
+            padding: 0 7px;
+        }
+        .header-content nav a:hover{
+            color: #00c300;
+        }
+        .header-content .download-button{
+            display: flex;
+            width: 90px;
+            height: 12px;
+            padding: 10px 20px;
+            text-align: center;
+            background-color: #00c300;
+            border-radius: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-content .download-button:hover{
+            background-color: #00FF00;
+        }
+        .header-content .download{
+            color: white;;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* 主banner */
+        .section-kv{
+            background-image: url("../whoscall/pic/banner.jpg");
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+        }
+        .kv{
+            width: 960px;
+            height: 480px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        .section-kv .pattern{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .section-kv .pattern2{
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+        }
+        .section-kv .kv-content{
+            display: flex;
+            flex-direction: column;
+            margin-left: 130px;
+            position: absolute;
+            left: 130px;
+            top: 150px;
+        }
+        .section-kv .kv-content .title{
+            font-size: 46px;
+            font-weight: bold;
+            color: #00c300;
+            margin: 20px 0;
+            background-image: linear-gradient(transparent 50%, white 50%)
+        }
+        .section-kv .kv-content .title-slogan p{
+            font-size: 32px;
+            font-weight: bold;
+            color: black;
+            margin: 0 0 30px 0;
+        }
+        .section-kv .apply-button{
+            display: flex;
+            width: 150px;
+            height: 30px;
+            padding: 10px 20px;
+            margin: 0 0 10px 0;
+            text-align: center;
+            background-color: #00c300;
+            border-radius: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+        .section-kv .apply-button:hover{
+            background-color: #00FF00;
+        }
+        .section-kv .apply-button a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .section-kv .kv-content p{
+            font-size: 14px;
+            color: #00c300;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+
+        /* slogan */
+        .section-slogan{
+            width: 100%;
+            background-color: white;
+        }
+        .slogan{
+            width: 960px;
+            height: 240px;
+            margin: auto;
+            background-color: white; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slogan .text .title h2{
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .slogan .text .title-highlight h2{
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 40px;
+            margin: 0 0 20px 0;
+        }
+        .slogan .text .title-highlight h2 span{
+            color: #00c300;
+        }
+        .slogan .text .ps{
+            color: gray;
+            font-size: 12px;
+        }
+
+        /* 關於 */
+        .section-about{
+            background-color: white;
+            width: 100%;
+        }
+        .about{
+            width: 960px;
+            height: 1200px;
+            background-color: white;
+            margin: auto;
+        }
+        .about .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0 0 0;
+        }
+        .about .box:nth-child(even){
+            flex-direction: row-reverse;
+        }
+        .about .box:nth-child(even) .imgbox{
+            margin-right: 25px;
+        }
+        .about .box .text{
+            width: 375px;
+            display: inline-block;
+        }
+        .about .box .imgbox{
+            margin-left: 25px;
+        }
+        .about .box img{
+            width: 350px;
+        }
+        .about .box .text h2{
+            color: #00c300;
+            font-weight: bold;
+            font-size: 28px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .about .box .text h2 span{
+            background-image: linear-gradient(transparent 50%, #98FB98 50%)
+        }
+        .about .box .text p{
+            font-size: 20px;
+            display: inline-block;
+            line-height: 26px;
+            color: black;
+            font-weight: bold;
+        }
+        .about .box .text p span{
+            color: gray;
+            font-size: 14px;
+            line-height: 50px;
+        }
+        /* service服務 */
+        .section-service{
+            background-color: #f5f6f9;
+            width: 100%;
+        }
+        .service{
+            width: 960px;
+            height: 450px;
+            background-color: #f5f6f9;
+            margin: auto;
+        }
+        .service h2{
+            text-align: center;
+            font-weight: bold;
+            padding-top: 35px;
+            margin: 30px 0;
+            font-size: 32px;
+        }
+        .service .wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .service .wrap .box{
+            width: 300px;
+            height: 300px;
+            padding-top : 20px;
+            /* border: black solid 1px; */            
+        }
+        .service .wrap .box .imgbox{
+            margin: auto;
+            width: 150px;
+            height: 150px;            
+        }
+        .service .wrap .box .text{
+            height: 100px;
+            width: 250px;
+            margin: auto;
+            text-align: center;
+            font-weight: bold;
+        }
+        .service .wrap .box .text h3{
+            font-size: 22px;
+            line-height: 50px;
+        }
+        .service .wrap .box .text p{
+            font-size: 16px;
+            line-height: 22px;
+        }
+        /* 用戶分享 */
+        .section-feedback{
+            width: 100%;
+            background-color: white;
+        }
+        .feedback{
+            width: 960px;
+            height: 450px;
+            background-color: white;
+            margin: auto;
+        }
+        .feedback .main-title{
+            text-align: center;
+            font-weight: bold;
+            font-size: 32px;
+            margin: 30px 0;
+        }
+        .feedback .wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            /* border: #00c300 solid 2px; */
+        }
+        .feedback .wrap .box{
+            width: 280px;
+            height: 300px;
+            padding-top : 20px;
+            margin: 0 10px;
+            box-shadow: 0 2px 10px rgb(113 123 142 / 20%);
+            border: 1px solid #d5d5d5;
+            border-radius: 3px;
+            position: relative;          
+        }
+        .feedback .wrap .box .notice-pattern{
+            padding-right: 20px;
+            transform: rotateY(180deg);
+            text-align: right;           
+        }
+        .feedback .wrap .box .text{
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        .feedback .wrap .box .text h3{
+            font-size: 22px;
+            line-height: 30px;
+            padding-bottom: 10px;
+        }
+        .feedback .wrap .box .text p{
+            line-height: 20px;
+            color: #2c323f;
+        }
+        .feedback .wrap .box .text p span{
+            background-image: linear-gradient(transparent 50%, #98FB98 50%)
+        }
+        .feedback .wrap .box .companylogo{
+            position: absolute;
+            display: inline-block;
+            right: 10px;
+            bottom: 20px;
+        }
+        .feedback .wrap .box .companylogo img{
+            width: 150px;            
+        }
+        .feedback .wrap .box:last-child .companylogo img{
+            width: 220px;
+        }
+        /* 註冊口號 */
+        .section-signin-slogan{
+            width: 100%;
+            background-color:  #f5f6f9;
+        }
+        .signin-slogan{
+            width: 960px;
+            height: 200px;
+            margin: auto;
+            background-color:  #f5f6f9; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .signin-slogan h2{
+            display: inline-block;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .signin-slogan p{
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0 0 0;
+            color: #00c300;
+        }
+        /* footer */
+        .main-footer{
+            width: 100%;
+            background-color: #2c323f;
+        }
+        .main-footer .footer-content{
+            width: 960px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: #d5d5d5 solid 1px;
+        }
+        .main-footer .footer-content .sitemap{
+            display: flex;
+            width: 450px;
+            margin-top: 20px;
+        }
+        .main-footer .footer-content .sitemap h3{
+            color: white;
+            margin: 10px 0;
+            font-weight: bolder;
+            font-size: 15px;
+        }
+        .main-footer .footer-content .sitemap .box{
+            display: flex;
+            flex-direction: column;
+            margin: 10px 30px;
+            height: 130px;
+        }
+        .main-footer .footer-content .sitemap .box a{
+            text-decoration: none;
+            color: #C0C0C0;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 20px;
+        }
+        .main-footer .footer-content .sitemap .box a:hover{
+            color: white;
+        }
+        .main-footer .followus{
+            width: 180px;
+            height: 130px;
+            margin-top: 20px;
+        }
+        .main-footer .followus h3{
+            margin: 10px 0;
+            color: white;
+            font-weight: bolder;
+            font-size: 15px;
+        }
+        .main-footer .followus a{
+            font-size: 26px;
+            color: #D3D3D3;
+            margin-right: 12px;
+        }
+        .main-footer .followus a:hover{
+            color: white;
+        }
+        .main-footer .followus p{
+            color: white;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+        .main-footer .footer-copyright{
+            width: 960px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-footer .footer-copyright .text{
+            display: flex;
+            margin: 20px 0 20px 28px ;
+        }
+        .main-footer .footer-copyright p{
+            color: #C0C0C0;
+            font-size: 15px;
+        }
+        .main-footer .footer-copyright a{
+            font-size: 14px;
+            margin: 0 0 0 30px;
+            text-decoration: none;
+            color: #C0C0C0;
+        }
+        .main-footer .footer-copyright a:hover{
+            color: white;
+        }
+        .main-footer .footer-copyright .lang{
+            margin: 20px 0 20px 28px ;
+            padding-right: 30px;
+        }
+        .main-footer .footer-copyright #select{
+            color: white;
+            background-color: #2c323f;
+            border: none;
+            font-weight: 600;
+        }
+        .main-footer .footer-copyright .lang a{
+            color: white;
+            font-size: 16px;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- 最上選單 -->
+        <header class="main-header">
+            <div class="header-content">
+                <a href="#" class="logo"><img src="../whoscall/pic/asset 6.svg" alt="logo"></a>
+                <nav>
+                    <a href="#">Whoscall 進階版</a>
+                    <a href="#">Whoscall 認證號碼</a>
+                    <a href="#">認識 Whoscall</a>
+                    <a href="#">Whoscall 專欄</a>
+                    <a href="#">常見問題</a>
+                </nav>
+    
+                <div class="download-button">
+                    <a href="#" class="download">免費下載</a>
+                </div>
+        
+            </div>
+        </header>
+        
+
+        <!-- 主banner -->
+        <section class="section-kv">
+            <div class="kv">
+                <div class="pattern">
+                    <img src="../whoscall/pic/asset 7.svg" alt="pattern">
+                </div>
+    
+                <div class="kv-content">
+                    <div class="title">
+                        <h2>whoscall 認證號碼</h2>
+                    </div>
+        
+                    <div class="title-slogan">
+                        <p>電話接通前<br>讓專業形象為你開場 ! </p>
+                    </div>
+                    
+                    <div class="apply-button">
+                        <a href="#">立即申請</a>
+                    </div>
+                    
+                    <p>企業方案優惠 $200/月 起</p>
+                </div> 
+
+                <div class="pattern2">
+                    <img src="../whoscall/pic/asset 8.svg" alt="pattern2">
+                </div>           
+            </div>
+        </section>
+        
+
+        <!-- slogan -->
+        <section class="section-slogan">
+            <div class="slogan">
+                <div class="text">
+                    <div class="title">
+                        <h2>根據市場調查顯示</h2>
+                        <div class="title-highlight">
+                            <h2>超過<span> 60% </span>的民眾會選擇忽視或<br>拒接陌生來電。</h2>
+                        </div>                    
+                    </div>
+                    <div class="ps">
+                        <p>※Pollster 波仕特線上市調 (2014)</p>
+                    </div>                              
+                </div>
+            </div>
+        </section>
+
+        <!-- 關於 -->
+        <section class="section-about">
+            <div class="about">
+                <div class="box">
+                    <div class="text">
+                        <h2>提高<span>2倍</span>電話接聽意願</h2>
+                        <p>Whoscall 認證號碼讓您在全台百萬用戶的來電視窗，顯示公司名稱、姓名等資訊。從此不再是客戶的陌生來電！<br>
+                        <span> ※Whoscall 調查 (2018)</span></p>
+                    </div>
+                    <div class="imgbox">
+                        <img src="../whoscall/pic/asset 0.webp" alt="">
+                    </div>
+                </div>
+    
+                <!-- 要反轉的box -->
+                <div class="box">
+                    <div class="text">
+                        <h2>創造主動<span>回撥</span>的潛在客戶</h2>
+                        <p>在來電記錄中，留下最佳企業形象，創造客戶主動聯繫的契機。</p>
+                    </div>
+                    <div class="imgbox">
+                        <img src="../whoscall/pic/asset 1.webp" alt="">
+                    </div>
+                </div>
+    
+                <div class="box">
+                    <div class="text">
+                        <h2>眾多來電<span>一秒</span>看見</h2>
+                        <p>不在客戶的通訊錄裡，也能於通話紀錄顯示企業資訊，輕鬆提升工作效率與拓客成功率。</p>
+                    </div>
+                    <div class="imgbox">
+                        <img src="../whoscall/pic/asset 2.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服務 -->
+        <section class="section-service">
+            <div class="service">
+                <h2>拓展業務的最佳夥伴！</h2>
+                <div class="wrap">
+                    <div class="box">
+                        <div class="imgbox">
+                            <img src="../whoscall/pic/asset 3.svg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>實名認證</h3>
+                            <p>Whoscall 嚴謹的實名審核，讓認證過的電話號碼更值得信任。</p>
+                        </div>
+                    </div>
+    
+                    <div class="box">
+                        <div class="imgbox">
+                            <img src="../whoscall/pic/asset 4.svg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>支援手機雙系統</h3>
+                            <p>支援在 iOS 與 Android 系統上的來電顯示，全台潛在客戶一網打盡。</p>
+                        </div>
+                    </div>
+    
+                    <div class="box">
+                        <div class="imgbox">
+                            <img src="../whoscall/pic/asset 5.svg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>一對一專人服務</h3>
+                            <p>專人服務、輕鬆申請<br>認證流程不再複雜惱人</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+       
+        <!-- 客戶回饋 -->
+        <section class="section-feedback">
+            <div class="feedback">
+                <div class="main-title">
+                    <h2>用戶經驗分享</h2>
+                </div>
+                <div class="wrap">
+                    <div class="box">
+                        <div class="notice-pattern">
+                            <img src="../whoscall/pic/asset 9.svg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>沒想到更多客戶主動回電!</h3>
+                            <p>申請Whoscall認證號碼後，<span>業務撥打出去的未接來電，客戶更樂意回電了</span>，保險方案的介紹與推動也比以前更即時有效!</p>
+                        </div>
+                        <div class="companylogo">
+                            <img src="../whoscall/pic/國泰人壽.png" alt="">
+                        </div>
+                    </div>
+    
+                    <div class="box">
+                        <div class="notice-pattern">
+                            <img src="../whoscall/pic/asset 9.svg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>高接聽率讓合作更有效率!</h3>
+                            <p>設定Whoscall認證號碼後，<span>電商客戶的接聽率明顯比以前高很多!</span>和客戶討論案子的速度更順利、也更能即時給客戶完整的營運建議!</p>
+                        </div>
+                        <div class="companylogo">
+                            <img src="../whoscall/pic/91app.png" alt="">
+                        </div>
+                    </div>
+    
+                    <div class="box">
+                        <div class="notice-pattern">
+                            <img src="../whoscall/pic/asset 9.svg" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>接聽意願提高，配送更快速!</h3>
+                            <p>透過Whoscall Number服務，讓顧客接聽意願變高，也讓我們的<span>物流司機更容易掌握顧客的狀況</span>，網購商品能更即時且有效率的送達。</p>
+                        </div>
+                        <div class="companylogo">
+                            <img src="../whoscall/pic/pc24h.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 註冊口號 -->
+        <section class="section-signin-slogan">
+            <div class="signin-slogan">
+                <div class="main-title">
+                    <h2>馬上申請企業專屬認證號碼！</h2>
+                    <p>每筆 $200/月 起，申辦號碼越多、優惠更多！</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <div class="main-footer">
+            <div class="footer-content">
+                <div class="sitemap">
+                    <div class="box">
+                        <h3>Whoscall</h3>
+                        <ul class="link-list">
+                            <li>
+                                <a href="#">認識 Whoscall</a>
+                            </li>
+                            <li>
+                                <a href="#">Whoscall 進階版</a>
+                            </li>
+                            <li>
+                                <a href="#">Whoscall 專欄</a>
+                            </li>
+                            <li>
+                                <a href="#">Whoscall 認證號碼</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="box">
+                        <h3>公司</h3>
+                        <ul class="link-list">
+                            <li>
+                                <a href="#">工作機會</a>
+                            </li>
+                        </ul>
+                        <h3>媒體中心</h3>
+                        <ul class="link-list">
+                            <li>
+                                <a href="#">最新消息</a>
+                            </li>
+                            <li>
+                                <a href="#">品牌識別</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="box">
+                        <h3>客戶服務</h3>
+                        <ul class="link-list">
+                            <li>
+                                <a href="#">安全性</a>
+                            </li>
+                            <li>
+                                <a href="#">常見問題</a>
+                            </li>
+                            <li>
+                                <a href="#">聯絡我們</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="followus">
+                        <div class="box">
+                            <h3>追蹤我們</h3>
+                            <a href="#" class="ig"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="fb"><i class="fa-brands fa-square-facebook"></i></a>
+                            <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+        
+                        <div class="box">
+                            <p>Powered by</p>
+                            <a href="#" class="gogolook"><img src="../whoscall/pic/gogolook.JPG" alt=""></a>
+                        </div>
+                </div>               
+            </div>
+                            
+            <div class="footer-copyright">
+                <div class="text">
+                    <p>© 2022 Gogolook. All Rights Reserved.</p>
+                    <a href="#">服務條款</a>
+                    <a href="#">隱私權政策</a>
+                </div>
+                <div class="lang">
+                    <a><i class="fa-solid fa-globe"></i></a>
+                    <select name="lang-selector" id="select">
+                        <option value="">中文</option>
+                        <option value="">English</option>
+                        <option value="">日本語</option>
+                        <option value="">한국어</option>
+                        <option value="">Bahasa Melayu</option>
+                    </select>
+                </div>
+            </div>
+                
+            
+        </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/93adc92248.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
