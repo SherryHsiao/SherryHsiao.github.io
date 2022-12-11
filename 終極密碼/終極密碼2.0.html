@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>終極密碼喝酒小遊戲</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .game-container{
+            width: 960px;
+            margin: auto;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .game-title{
+            padding: 20px 0 10px 0;
+            text-align: center;
+            background-color: #C6CCD8;
+        }
+        .game-title h1{
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #213651;
+        }
+        .game-title h1 span{
+            font-size: 28px;
+        }
+        .game-title .display-num{
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #213651;
+            font-weight: bold;
+        }
+        .game-title input{
+            border: 2px solid #213651;
+            border-radius: 3px;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .game-title .warning-hint{
+            margin-top: 10px;
+            font-weight: bold;
+            color: #41566F;
+            font-size: 16px;
+        }
+        .game-btns{
+            display: flex;
+            flex-direction: column;
+            background-color: #C6CCD8;
+        }
+        .game-btns .main-btns{
+            padding: 10px 120px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .main-btns .nums,.clear,.guess{
+            width: 150px;
+            height: 40px;
+            margin: 10px 20px;
+            border-radius: 200px;
+            font-size: 16px;
+            font-weight: bolder;
+            border: 3px solid #213651;
+            color: #213651;
+            box-shadow: 0 2px 10px rgb(0 0 0 / 50%);
+            background-color: #F0EFED;
+        }
+        .main-btns .nums:hover{
+            background-color: #F2D6D2;
+            color: #C07879;
+            border: 3px solid #AD6556;
+            font-size: 18px;
+            margin-bottom: -0.5px;
+        }
+        .main-btns .clear,.guess{
+            background-color: #6B7A8D;
+            color: #F0EFED;
+        }
+        .main-btns .clear:hover,.guess:hover{
+            background-color: #C07879;
+            color: #F2D6D2;
+            border: 3px solid #AD6556;
+            font-size: 18px;
+            margin-bottom: -0.5px;
+        }
+        .game-btns .reset-game{
+            align-self: center;
+            padding-bottom: 20px;
+        }
+        .reset-game .reset{
+            width: 250px;
+            height: 51px;
+            border-radius: 200px;
+            font-size: 18px;
+            font-weight: bolder;
+            border: 3px solid #213651;
+            background-color: #7785AA;
+            box-shadow: 0 2px 10px rgb(0 0 0 / 50%);
+            color: #C6CCD8;
+        }
+        .reset-game .reset:hover{
+            width: 260px;
+            background-color: #B4554F;
+            color: #E3B09D;
+            border: 3px solid #6D2819;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="game-container">
+        <div class="game-title">
+            <h1><span><i class="fa-solid fa-martini-glass-citrus"></i></span> 終極密碼 <span><i class="fa-solid fa-martini-glass-citrus"></i></span></h1>
+            <p class="display-num">0  ~  100</p>
+            <input type="text" id="num-input">
+            <p class="warning-hint">請輸入 0 ~ 100 的數字 ! 猜中就喝酒 !</p>
+        </div>
+
+        <div class="game-btns">
+            <div class="main-btns">
+                <button class="nums">1</button>
+                <button class="nums">2</button>
+                <button class="nums">3</button>
+                <button class="nums">4</button>
+                <button class="nums">5</button>
+                <button class="nums">6</button>
+                <button class="nums">7</button>
+                <button class="nums">8</button>
+                <button class="nums">9</button>
+                <button class="clear">CLEAR</button>
+                <button class="nums">0</button>
+                <button class="guess">GUESS</button>
+            </div>
+            <div class="reset-game">
+                <button class="reset">TRY AGAIN</button>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const myInput = document.querySelector('#num-input')
+        const guessBtn = document.querySelector('.guess')
+        const clearBtn = document.querySelector('.clear')
+        const numsBtn = document.querySelectorAll('.nums')
+        const resetBtn = document.querySelector('.reset')
+        const warningMsg = document.querySelector('.warning-hint')
+        const displayNum = document.querySelector('.display-num')
+        let minnum = 0
+        let maxnum = 100
+
+        //產生亂數答案
+        function getRandomIntInclusive(minnum, maxnum){
+            minnum = Math.ceil(minnum);
+            maxnum = Math.floor(maxnum);
+            return Math.floor(Math.random() * (maxnum - minnum + 1) + minnum);
+        }
+        let resultAns = getRandomIntInclusive(minnum,maxnum)
+        
+        //為 guessBtn新增事件的點擊監聽
+        guessBtn.addEventListener('click',function(){
+            //將輸入內容轉成數字
+            let myAns = myInput.value;
+            const radix = 10;
+            let myIntAns = parseInt(myAns,radix);
+
+            if( isNaN(myIntAns) ){
+                warningMsg.innerText = '您輸入的不是數字，罰一杯 ! 請輸入數字 !'
+            }
+            else{
+                if( resultAns > myIntAns && myIntAns >= minnum )
+                {
+                    minnum = myIntAns
+                    displayNum.innerText = `${minnum}~${maxnum}`
+                    warningMsg.innerText = `請輸入 ${minnum}~${maxnum} 的數字 ! 猜中就喝酒 !`
+                }
+                else if( resultAns < myIntAns && myIntAns <= maxnum)
+                {
+                    maxnum = myIntAns
+                    displayNum.innerText = `${minnum}~${maxnum}`
+                    warningMsg.innerText = `請輸入 ${minnum}~${maxnum} 的數字 ! 猜中就喝酒 !`
+                }
+                else if( myIntAns < minnum || myIntAns > maxnum)
+                {
+                    warningMsg.innerText = '超過範圍，罰一杯 ! 請重新輸入 !'
+                }
+                else{
+                    warningMsg.innerText = `猜中了 ! 答案是 ${resultAns} !  喝 !`;
+                }
+            }
+
+            myInput.value = ''
+        })
+        
+        //為clearBtn新增事件的點擊監聽(清除myinput內文字)
+        clearBtn.addEventListener('click',function(){
+            myInput.value = ''
+            warningMsg.innerText = `請輸入 ${displayNum.innerText} 的數字 ! 猜中就喝酒 !`
+        })
+
+        //為numsBtn們新增事件的點擊監聽(將數字按鍵的數字放進myinput中)
+        numsBtn.forEach((element) => {
+            element.addEventListener('click',function(){
+                myInput.value += element.innerText
+            })
+        })
+
+        //為resetBtn新增事件的點擊監聽(重新開始)
+        resetBtn.addEventListener('click',function(){
+            myInput.value = ''
+            warningMsg.innerText = '請輸入0 ~ 100的數字 ! 猜中就喝酒 !'
+            minnum = 0
+            maxnum = 100
+            resultAns = getRandomIntInclusive(minnum,maxnum)
+            displayNum.innerText = `${minnum}~${maxnum}`
+        })
+
+
+    </script>
+
+    <script src="https://kit.fontawesome.com/93adc92248.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
