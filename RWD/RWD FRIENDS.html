@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        :root{
+            --column-count: 3;
+        }
+        .wrap{
+            background-color: #7B6AA5;
+            margin: auto;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .card{
+            margin: 15px;
+            padding: 10px;
+            border: 2px solid #DDC59F;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .pic{
+            width: 50%;
+        }
+        .pic img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .text{
+            width: 46%;
+            text-align: center;
+            margin: auto;
+            padding: 0 2%;
+            vertical-align: justify;
+        }
+        .text p{
+            margin: 10px;
+        }
+        /* 推由小到大寫。768 平板直向 */
+        @media screen and (min-width:768px) {
+            .wrap{
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: auto;
+            }
+            .card{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: calc(100% / var(--column-count) - 30px);
+            }
+            .card .text{
+                margin-top: 10px;
+            }            
+        }
+        /* 1024 平板橫向不需寫 */
+        /* 1200 桌機 */
+        @media screen and (min-width:1200px){
+            .card{
+                --column-count: 4;
+                flex-direction: row;
+            }
+            .card:nth-child(n+3){
+                position: relative;
+                overflow: hidden;
+            }
+            .card:nth-child(-n+2){
+                --column-count: 2;
+            }
+            .card:nth-child(n+3) .pic{
+                width: 100%;
+                vertical-align: top;
+            }
+            .card .text{
+                margin: auto;
+            }
+            .card:nth-child(n+3) .text{
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                top: 100%;
+                position: absolute;
+                background-color: #0008;
+                color: white;
+                transition: 1s;
+            }
+            .card:hover .text{
+                top: 0%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card">
+            <div class="pic">
+                <img src="../RWD/pic/monica2.jpg" alt="">
+            </div>
+            <div class="text">
+                <h2>Monica Geller</h2>
+                <p>I'm organized. I clean the house not just clean Monica clean. Swipe right for free
+                 thanksgiving dinner.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="../RWD/pic/chandler.jpg">
+            </div>
+            <div class="text">
+                <h2>Chandler Bing</h2>
+                <p>I'm Hopeless, Awkward, And Desperate for Love. I make jokes when I'm uncomfortable.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="../RWD/pic/rach.jpg">
+            </div>
+            <div class="text">
+                <h2>Rachel Green</h2>
+                <p>I downloaded Tinder because "Ross slept with another woman" and being alone sucks.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="../RWD/pic/ros.jpg">
+            </div>
+            <div class="text">
+                <h2>Ross Geller</h2>
+                <p>Relationship Status: "We were on a break !" Swipe right to know some interesting facts about dinosaurs.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="../RWD/pic/phoebe.jpg">
+            </div>
+            <div class="text">
+                <h2>Phoebe Buffay</h2>
+                <p>Phoebe AKA Princess Consuela Banana-Hammock AKA Regina Phalange. The lead singer and guitarist of my music video "Smelly Cat".</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="../RWD/pic/joey.jpg">
+            </div>
+            <div class="text">
+                <h2>Joey Tribbiani</h2>
+                <p>HOW YOU DOIN ? I will share my pictures with you but can't share the food ! </p>
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>
