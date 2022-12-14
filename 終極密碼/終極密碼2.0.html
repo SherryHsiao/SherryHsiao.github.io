@@ -193,6 +193,12 @@
                 }
                 else{
                     warningMsg.innerText = `猜中了 ! 答案是 ${resultAns} !  喝 !`;
+                    //贏了後會鎖住數字鍵盤們
+                    numsBtn.forEach((element) => {
+                        element.disabled = true
+                    })
+                    guessBtn.disabled = true
+                    clearBtn.disabled = true
                 }
             }
 
@@ -210,6 +216,7 @@
             element.addEventListener('click',function(){
                 myInput.value += element.innerText
             })
+
         })
 
         //為resetBtn新增事件的點擊監聽(重新開始)
@@ -220,6 +227,11 @@
             maxnum = 100
             resultAns = getRandomIntInclusive(minnum,maxnum)
             displayNum.innerText = `${minnum}~${maxnum}`
+            numsBtn.forEach((element) => {
+                        element.disabled = false
+                    })
+                    guessBtn.disabled = false
+                    clearBtn.disabled = false
         })
 
 
