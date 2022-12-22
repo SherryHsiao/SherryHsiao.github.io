@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            width: 1200px;
+            box-sizing: border-box;
+            /* background-color: #ccc; */
+        }
+        h1{
+            padding: 20px 0px;
+            font-size: 28px;
+        }
+        .car-view{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .car-pics{
+            width: 70%;
+        }
+        .car-pics img{
+            width: 100%;
+        }
+        .right,.left{
+            font-size: 28px;
+            width: 3%;
+            height: 30%;
+            border-radius: 100%;
+            align-self: center;
+            box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h1>Altis 360度賞車</h1>
+        <div class="car-view">
+            <button class="right"><i class="fa-sharp fa-solid fa-arrow-rotate-left"></i></button>
+            <div class="car-pics">
+                <img src="" alt=""> 
+            </div>
+            <button class="left"><i class="fa-sharp fa-solid fa-arrow-rotate-right"></i></button>
+        </div>
+    </section>
+    
+    <script>
+        let carArray = [];
+        let carpics;
+        let btnRight = document.querySelector('.right');
+        let btnLeft = document.querySelector('.left');
+        let img = document.querySelector(".car-pics img");
+        let idx = 0;
+
+        window.onload = function () {
+            carPics = document.querySelector('.car-pics');           
+            
+            img.src = carArray[idx];
+            GenCarArray();
+
+            btnRight.addEventListener('click',right)
+            btnLeft.addEventListener('click',left)
+            
+        }
+        
+        // 本來方法傳進去吃不到，發現要宣告變數給他
+        let right = function toRight(){
+            if(idx === 0){
+                idx = 59;
+            }else{
+                idx--;
+            }
+            img.src = carArray[idx];
+        }
+
+        let left = function toLeft(){
+            if(idx === 59){
+                idx = 0;
+            }else{
+                idx++;
+            }
+            img.src = carArray[idx];
+        }
+
+        function GenCarArray() {
+            for (let i = 1; i <= 60; i++) {
+                let urlTemplate = `../Altis360/carpics/360EXT_1_18_${i}.png`;
+                carArray.push(urlTemplate);
+            }
+            img.src = carArray[idx];
+
+        }
+    </script>
+
+    <script src="https://kit.fontawesome.com/93adc92248.js" crossorigin="anonymous"></script>
+</body>
+</html>
