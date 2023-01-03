@@ -235,8 +235,9 @@
                 //     warningMsg.innerText = `請輸入4個數字 !`;
                 //     input.value = "";
                 // }
-                else if (judgeRepeatNum(true)) {
-                    warningMsg.innerHTML = `<span style="color:#945255; font-weight: bold;">您輸入的非4個不重複數字 ! 請重新輸入</span>`; 
+                else if (guessTxt.length !== 4 || judgeRepeatNum()) {
+                    warningMsg.innerHTML = `<span style="color:#945255; font-weight: bold;">您輸入的非4個不重複數字 ! 請重新輸入</span>`;
+                    //跳完要清掉
                     input.value = "";
                 }
                 else {
@@ -260,11 +261,12 @@
         //防呆:防止輸入重複數字
         function judgeRepeatNum() {
             let sortGuessArr = guessArr.sort();
-            for (let i = 0; i < guessArr.length; i++) {
+            for (let i = 0; i < guessArr.length -1; i++) {
                 if (sortGuessArr[i] == sortGuessArr[i + 1]) {
                     return true;
                 }
             }
+            return false;
         }
 
         // // 防呆:防止輸入非數字
