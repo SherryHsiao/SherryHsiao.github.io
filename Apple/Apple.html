@@ -169,7 +169,7 @@
     <div class="products container">
       <div id="display-products" class="row">
         <div id="main-pic" class="col-12 col-md-6 col-lg-6">
-          <img id="product-img" src="https://fakeimg.pl/300x300/200" alt="">
+          <img id="product-img" src="" alt="">
         </div>
         <div id="product-info" class="col-12 col-md-6 col-lg-6">
           <div class="color">
@@ -385,6 +385,7 @@
       colorBlock.innerHTML = "";
       storageBlock.innerHTML = "";
       // otherBtns.innerHTML = "";
+      displayPrice.innerText = "";
 
       productImg.setAttribute("src", appleList[productIdx].mainpic)
 
@@ -392,7 +393,7 @@
       let colorRow = document.createElement("div");
       colorRow.setAttribute("class", "row");
 
-      appleList[productIdx].color.forEach((colorItem, index) => {
+      appleList[productIdx].color.forEach((colorItem) => {
         let colorCol = document.createElement("div");
         colorCol.setAttribute("class", "col-3");
         colorCol.classList.add("col-md-3");
@@ -400,7 +401,6 @@
 
         let colorBtn = document.createElement("button");
         colorBtn.setAttribute("class", "btn");
-        colorBtn.setAttribute("id", "color-btn")
         colorBtn.classList.add("btn-outline-secondary");
         colorBtn.classList.add("btn-sm");
 
@@ -433,7 +433,7 @@
       let storageRow = document.createElement("div");
       storageRow.setAttribute("class", "row");
 
-      appleList[productIdx].storage.forEach((storageItem, index) => {
+      appleList[productIdx].storage.forEach((storageItem) => {
         let storageCol = document.createElement("div");
         storageCol.setAttribute("class", "col-3");
         storageCol.classList.add("col-md-3");
@@ -441,7 +441,6 @@
 
         let storageBtn = document.createElement("button");
         storageBtn.setAttribute("class", "btn");
-        storageBtn.setAttribute("id", "storage-btn");
         storageBtn.classList.add("btn-outline-secondary")
         storageBtn.classList.add("btn-sm");
 
@@ -465,7 +464,7 @@
 
         //點擊storageBtn會秀價格
         storageBtn.addEventListener("click", function () {
-          displayPrice.innerText = Object.values(storageItem)
+          displayPrice.innerText = Object.values(storageItem);
         })
 
       })
