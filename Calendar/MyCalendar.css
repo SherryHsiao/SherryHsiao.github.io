@@ -1,0 +1,48 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh;
+    background-image: url(../Calendar/pics/3.jpg);
+    background-size: cover;
+    background-position: center center;
+    
+}
+
+.container {
+    padding: 60px 20px;
+}
+
+.header {
+    padding-bottom: 60px;
+    justify-content: space-between;
+}
+
+.header h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+table {
+    border-style: none;
+}
+
+table th{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+table th,
+td {
+    text-align: center;
+    list-style: none;
+    border-style: none;
+    
+}
+
+table td{
+    font-size: 20px;
+}
+
+table td ul{
+    font-size: 14px;
+    color: #413D3E;
+}
