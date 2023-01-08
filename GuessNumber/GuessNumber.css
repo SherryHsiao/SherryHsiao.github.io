@@ -1,0 +1,87 @@
+.game-container {
+    margin: auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #242526;
+}
+
+.row {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #EFEFEF;
+}
+
+.title h1 {
+    font-size: 30px;
+}
+
+.title p {
+    font-size: 20px;
+    padding-top: 30px;
+    font-weight: bold;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.btns button {
+    margin: 0 10px;
+    height: 40px;
+    /* background-color: #E2E2E4; */
+    border: 2px solid #565658;
+    color: #565658;
+    font-size: 16px;
+}
+
+.display-container {
+    margin: auto;
+    border: 1px solid #ccc;
+    width: 450px;
+    height: calc(100vh - 316px);
+    color: #EFEFEF;
+    overflow: scroll;
+    display: inline-block;
+}
+
+.guess-container {
+    padding: 20px 0;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.guess-container p {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #EFEFEF;
+    font-weight: bold;
+}
+
+.guess-container #guess-input {
+    margin-right: 15px;
+    height: 30px;
+    border: 2px solid #EFEFEF;
+    background-color: #242526;
+    color: #EFEFEF;
+}
+
+.guess-container .guess {
+    height: 30px;
+    background-color: #565658;
+    border: 2px solid #EFEFEF;
+    color: #EFEFEF;
+    font-size: 16px;
+}
