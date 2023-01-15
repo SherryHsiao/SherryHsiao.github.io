@@ -1,0 +1,79 @@
+body {
+    background-image: url(slotpics/bc01.jpg);
+    background-size: cover;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+i {
+    font-size: 20px;
+}
+
+.title {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 26px;
+    color: #6B6C6E;
+}
+
+[box-id] {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: 0.3s;
+}
+
+
+[box-id].active i {
+    border-radius: 50%;
+    box-shadow: 0 0 20px goldenrod;
+    transition: 0s;
+}
+
+.btn {
+    border: 3px solid #940000;
+    color: #940000;
+    font-weight: bold;
+}
+
+.btn:hover {
+    border: 3px solid #940000;
+    color: #940000;
+    background-color: #EDBB73;
+}
+
+canvas {
+    position: absolute;
+}
+
+@media screen and (width < 768px) {
+    .row {
+        padding: 0 20px;
+    }
+
+    .btn {
+        font-size: 12px;
+    }
+
+    canvas {
+        width: 150px;
+        height: 100px;
+    }
+}
+
+@media screen and (1024px > width >=768px) {
+    i {
+        font-size: 36px;
+    }
+}
+
+@media screen and (width >=768px) {
+    i {
+        font-size: 42px;
+    }
+}
