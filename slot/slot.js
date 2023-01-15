@@ -293,6 +293,7 @@ window.onload = function () {
     startBtn.onclick = function () {
         Go();
         DrawTop();
+        startBtn.disabled = true;
     }
 }
 
@@ -412,7 +413,6 @@ function eventMove(e) {
         TopVanish();
 
     }
-    startBtn.disabled = true;
 
 }
 
