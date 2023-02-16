@@ -115,6 +115,14 @@
     background-color: var(--main-pink);
 }
 
+.homepage-nav-member-block .nav-link i {
+    font-size: 18px;
+}
+
+.homepage-nav-member-block .nav-link span {
+    font-size: 8px;
+}
+
 .homepage-category-nav {
     position: absolute;
     background-color: var(--light-pink);
@@ -502,11 +510,8 @@ li {
     font-weight: 600;
 }
 
+/* 手機以上 */
 @media screen and (min-width:768px) {
-    .homepage-HB {
-        display: none;
-    }
-
     .homepage-main-header #search-phone {
         display: none;
     }
@@ -514,6 +519,10 @@ li {
     .homepage-main-header #search-pc {
         display: block;
     }
+
+    /* .homepage-nav-items{
+        display: none;
+    } */
 
     /* -------section-shops 品牌探索--------- */
     .homepage-shops-container .shops-btns {
@@ -533,8 +542,30 @@ li {
 
 }
 
+/* 桌機以下 */
+@media screen and (max-width: 1200px) {
+    .homepage-main-header #search-pc {
+        display: none;
+    }
+
+    .homepage-main-header #search-phone {
+        display: block;
+    }
+
+    .homepage-nav-items{
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+        /* flex-basis: auto; */
+    }
+    
+}
+
+/* 桌機 */
 @media screen and (min-width:1200px) {
-    .HB {
+    .homepage-HB {
         display: none;
     }
 
@@ -610,7 +641,7 @@ li {
         padding: 0 10px;
         flex-wrap: wrap;
         box-shadow: 0px 3px 20px 0px var(--light-pink);
-        /* border: 2px solid var(--main-pink); */
+        /* border: 2px solid var(--light-pink); */
 
     }
 
@@ -634,7 +665,7 @@ li {
     .category-title-pc {
         display: flex;
         align-items: center;
-        padding: 10px 0;
+        padding: 10px 5px;
     }
 
     #menu-control {
@@ -659,13 +690,14 @@ li {
         color: var(--main-pink);
     }
 
-    .homepage-category-nav-pc .category-second-list-pc a:hover{
+    .homepage-category-nav-pc .category-second-list-pc a:hover {
         color: var(--peach-pink);
     }
 
     .homepage-category-navlist-pc li:hover .category-second-list-pc {
         display: block;
     }
+
     .category-second-list-pc li {
         border-top: 2px solid var(--main-pink);
     }
