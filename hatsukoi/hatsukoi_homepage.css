@@ -271,8 +271,10 @@
     vertical-align: middle;
 }
 
-.homepage-recommended-container .homepage-recommended-text p {
+.homepage-recommended-container .homepage-recommended-text a {
     padding: 5px 0;
+    text-decoration: none;
+    color: var(--dark-gray);
 }
 
 .homepage-recommended-container .homepage-recommended-text h2 {
@@ -280,7 +282,7 @@
 }
 
 .homepage-recommended-container .homepage-recommended-text h2 a {
-    color: var(--dark-gray);
+    color: var(--main-pink);
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
