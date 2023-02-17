@@ -21,6 +21,23 @@
     line-height: 1.5em;
     color: var(--dark-gray);
 }
+.carousel-control-next, .carousel-control-prev{
+    padding: 0 10px;
+    width: 3%;
+}
+
+#modal-btn {
+    height: 40px;
+    font-size: 14px;
+    border: 1px solid var(--light-gray);
+    color: var(--light-gray);
+}
+
+#modal-btn:hover {
+    background-color: var(--peach-pink);
+    color: var(--light-pink);
+    border: 1px solid var(--peach-pink);
+}
 
 /* -----------header----------------- */
 .homepage-main-header {
@@ -271,21 +288,52 @@
     vertical-align: middle;
 }
 
+
+.homepage-recommended-container .homepage-recommended-pic 
+.btn i{
+    color: var(--light-gray);
+    
+}
+.homepage-recommended-container .homepage-recommended-pic 
+.btn:focus{
+    border: none;
+}
+
+.homepage-recommended-container .homepage-recommended-pic 
+.btn:hover i{
+    color: var(--peach-pink);
+}
+
+.homepage-recommended-container .homepage-recommended-pic .homepage-hatsukoi-iconbox{
+    width: 30px;
+    height: 30px;
+}
+
+.homepage-recommended-container .homepage-recommended-pic .homepage-hatsukoi-iconbox img{
+    width: 100%;
+    vertical-align: middle;
+}
+
 .homepage-recommended-container .homepage-recommended-text a {
     padding: 5px 0;
+    font-size: 13px;
+    font-weight: bold;
     text-decoration: none;
     color: var(--dark-gray);
 }
 
-.homepage-recommended-container .homepage-recommended-text h2 {
-    padding: 5px 0;
+.homepage-recommended-container .homepage-recommended-text a:hover{
+    color: var(--peach-pink);
 }
 
-.homepage-recommended-container .homepage-recommended-text h2 a {
-    color: var(--main-pink);
+.homepage-recommended-container .homepage-recommended-text h2 {
+    padding: 5px 0;
+    
+}
+
+.homepage-recommended-container .homepage-recommended-text h2 a {    
     text-decoration: none;
     font-size: 16px;
-    font-weight: bold;
 }
 
 .homepage-recommended-container .homepage-recommended-price {
