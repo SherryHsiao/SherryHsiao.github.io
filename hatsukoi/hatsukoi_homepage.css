@@ -21,7 +21,9 @@
     line-height: 1.5em;
     color: var(--dark-gray);
 }
-.carousel-control-next, .carousel-control-prev{
+
+.carousel-control-next,
+.carousel-control-prev {
     padding: 0 10px;
     width: 3%;
 }
@@ -178,12 +180,24 @@
 /* 手機產品分類nav */
 .homepage-category-nav .homepage-category-list {
     box-shadow: 0 2px 10px var(--light-pink);
-    width: 95%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     padding: 10px 0;
     margin: auto;
+}
 
+.homepage-category-nav .homepage-category-list-title {
+    background-color: var(--main-pink);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-category-nav .homepage-category-list-title h1 {
+    font-weight: bold;
+    color: #FFFFFF;
 }
 
 .homepage-category-nav .homepage-category-list a {
@@ -199,47 +213,30 @@
     color: var(--dark-gray);
 }
 
+.homepage-category-nav .homepage-second-list {
+    box-shadow: var(--light-pink) 0px 0px 0.25em, var(--light-pink) 0px 0.25em 1em;
+}
+
+.homepage-category-nav .homepage-second-list a {
+    color: var(--main-pink);
+}
+
+.homepage-category-nav .homepage-second-list a:hover {
+    color: var(--peach-pink);
+}
+
+
 .homepage-category-nav .homepage-category-list li+li {
-    border-top: 2px solid var(--main-pink);
+    border-top: 2px solid var(--light-pink);
 }
 
-.homepage-category-title {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-}
 
-.homepage-category-list li:hover #list-title {
-    color: var(--dark-gray);
-    font-weight: bold;
-}
-
-.second-list li:hover .second-list-title #second-title {
-    color: var(--dark-gray);
-}
 
 
 .homepage-second-list li:first-child {
     border-top: none;
 }
 
-.homepage-category-nav .third-list {
-    display: none;
-    background-color: var(--peach-pink);
-    border: 2px solid var(--light-pink);
-    border-top: 1px;
-    position: absolute;
-    left: 100%;
-    box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
-}
-
-.homepage-category-nav .third-list li {
-    border-top: 2px solid var(--light-pink);
-}
-
-.homepage-category-nav .third-list a {
-    color: var(--light-pink);
-}
 
 .homepage-category-nav-pc {
     display: none;
@@ -289,27 +286,25 @@
 }
 
 
-.homepage-recommended-container .homepage-recommended-pic 
-.btn i{
+.homepage-recommended-container .homepage-recommended-pic .btn i {
     color: var(--light-gray);
-    
+
 }
-.homepage-recommended-container .homepage-recommended-pic 
-.btn:focus{
+
+.homepage-recommended-container .homepage-recommended-pic .btn:focus {
     border: none;
 }
 
-.homepage-recommended-container .homepage-recommended-pic 
-.btn:hover i{
+.homepage-recommended-container .homepage-recommended-pic .btn:hover i {
     color: var(--peach-pink);
 }
 
-.homepage-recommended-container .homepage-recommended-pic .homepage-hatsukoi-iconbox{
+.homepage-recommended-container .homepage-recommended-pic .homepage-hatsukoi-iconbox {
     width: 30px;
     height: 30px;
 }
 
-.homepage-recommended-container .homepage-recommended-pic .homepage-hatsukoi-iconbox img{
+.homepage-recommended-container .homepage-recommended-pic .homepage-hatsukoi-iconbox img {
     width: 100%;
     vertical-align: middle;
 }
@@ -322,16 +317,16 @@
     color: var(--dark-gray);
 }
 
-.homepage-recommended-container .homepage-recommended-text a:hover{
+.homepage-recommended-container .homepage-recommended-text a:hover {
     color: var(--peach-pink);
 }
 
 .homepage-recommended-container .homepage-recommended-text h2 {
     padding: 5px 0;
-    
+
 }
 
-.homepage-recommended-container .homepage-recommended-text h2 a {    
+.homepage-recommended-container .homepage-recommended-text h2 a {
     text-decoration: none;
     font-size: 16px;
 }
@@ -420,7 +415,9 @@
 
 .homepage-shops-container .homepage-shops-btns {
     display: flex;
-    justify-content: center;
+    padding: 10px 0;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .homepage-shops-container .homepage-shops-btns .btn {
@@ -589,6 +586,11 @@ li {
         color: var(--light-gray);
     }
 
+    .homepage-shops-container .homepage-shops-btns {
+        flex-direction: row;
+        justify-content: center;
+    }
+
 
 }
 
@@ -602,15 +604,15 @@ li {
         display: block;
     }
 
-    .homepage-nav-items{
+    .homepage-nav-items {
         display: none;
     }
 
     .navbar-expand-lg .navbar-collapse {
-        display: none!important;
+        display: none !important;
         /* flex-basis: auto; */
     }
-    
+
 }
 
 /* 桌機 */
