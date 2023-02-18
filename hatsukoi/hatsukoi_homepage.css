@@ -177,30 +177,8 @@
     transition: .5s;
 }
 
-/* 手機產品分類nav */
-.homepage-category-nav .homepage-category-list {
-    box-shadow: 0 2px 10px var(--light-pink);
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
-    margin: auto;
-}
-
-.homepage-category-nav .homepage-category-list-title {
-    background-color: var(--main-pink);
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.homepage-category-nav .homepage-category-list-title h1 {
-    font-weight: bold;
-    color: #FFFFFF;
-}
-
-.homepage-category-nav .homepage-category-list a {
+/* -------手機產品分類nav------- */
+.homepage-category-nav a {
     font-size: 14px;
     text-decoration: none;
     padding: 5px 15px;
@@ -209,8 +187,71 @@
     display: block;
 }
 
-.homepage-category-nav .homepage-category-list a:hover {
+.homepage-category-nav a:hover {
     color: var(--dark-gray);
+}
+
+/* 會員帳號 */
+.homepage-member-block .homepage-member-account{
+    height: 100px;
+    background-color: var(--light-gray);
+}
+.homepage-member-block .homepage-member-account .homepage-member-picbox{
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+.homepage-member-block .homepage-member-account .homepage-member-picbox img{
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 50% 50% 50% 50%;
+}
+.homepage-member-block .homepage-member-list-group {
+    border-radius: 0%;
+}
+
+.homepage-member-block .homepage-member-list-group .list-group-item{
+    border: none;
+    border-bottom: .5px solid #EAEDEF;
+}
+
+.homepage-member-block .homepage-member-list-group .list-group-item:last-child{
+    border-bottom: none;
+}
+
+.homepage-member-block .homepage-member-list-group .homepage-member-iconbox {
+    width: 40px;
+    height: 40px;
+}
+
+.homepage-member-block .homepage-member-list-group .homepage-member-iconbox i {
+    width: 100%;
+
+}
+
+/* 產品分類 */
+.homepage-category-nav .homepage-category-list,
+.homepage-member-block {
+    box-shadow: 0 2px 10px var(--light-pink);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    margin: auto;
+}
+
+.homepage-category-nav .homepage-list-title {
+    background-color: var(--main-pink);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-category-nav .homepage-list-title h1 {
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 14px;
 }
 
 .homepage-category-nav .homepage-second-list {
@@ -472,6 +513,10 @@
     font-size: 16px;
 }
 
+.homepage-footer-maininfo .homepage-footer-wrap:last-child {
+    padding-top: 20px;
+}
+
 .homepage-footer-maininfo address a,
 li {
     padding: 5px 0;
@@ -507,6 +552,42 @@ li {
     padding: 5px;
 }
 
+.homepage-footer-maininfo .homepage-app {
+    padding-top: 10px;
+}
+
+.homepage-footer-maininfo .homepage-qrcode button {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.homepage-footer-maininfo .homepage-qrcode .homepage-brand-iconbox {
+    width: 25px;
+    height: 25px;
+}
+
+.homepage-footer-maininfo .homepage-qrcode .homepage-brand-iconbox img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.homepage-footer-maininfo .homepage-qrcode button p {
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.homepage-footer-maininfo .homepage-qrcode .homepage-qrcode-box {
+    width: 40px;
+    height: 40px;
+}
+
+.homepage-footer-maininfo .homepage-qrcode .homepage-qrcode-box img {
+    width: 100%;
+    vertical-align: middle;
+}
+
 .homepage-footer-container .homepage-footer-line {
     border-top: .5px solid var(--light-gray);
 }
@@ -524,6 +605,7 @@ li {
 .homepage-footer-container .homepage-copyright-slogan {
     display: flex;
     align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .homepage-footer-container .homepage-copyright-logo {
@@ -547,7 +629,6 @@ li {
 
 .homepage-copyright-text .homepage-lang {
     margin: 20px 0 20px 28px;
-    /* padding-right: 30px; */
 }
 
 .homepage-copyright-text #lang-select {
@@ -611,6 +692,10 @@ li {
     .navbar-expand-lg .navbar-collapse {
         display: none !important;
         /* flex-basis: auto; */
+    }
+
+    .homepage-footer-container .homepage-copyright-text {
+        justify-content: right;
     }
 
 }
@@ -782,6 +867,13 @@ li {
     /* footer */
     .homepage-footer-container .homepage-copyright-text {
         justify-content: right;
+    }
+
+    .homepage-footer-maininfo .homepage-footer-wrap:last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: last baseline;
+        padding-top: 0;
     }
 
 
