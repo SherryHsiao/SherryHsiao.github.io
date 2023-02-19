@@ -41,6 +41,88 @@
     border: 1px solid var(--peach-pink);
 }
 
+/* ------共用商品卡片------- */
+.products-col{
+    padding: 5px;
+}
+
+.products-card {
+    height: 95%;
+    margin: auto;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 20px 0px rgb(17 29 48 / 5%);
+}
+
+.products-pic {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.products-pic img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+
+.products-pic .btn i {
+    color: var(--light-gray);
+
+}
+
+.products-pic .btn:focus {
+    border: none;
+}
+
+.products-pic .btn:hover i {
+    color: var(--peach-pink);
+}
+
+.products-pic .homepage-hatsukoi-iconbox {
+    width: 30px;
+    height: 30px;
+}
+
+.products-pic .homepage-hatsukoi-iconbox img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.products-text a {
+    padding: 5px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--dark-gray);
+}
+
+.products-text a:hover {
+    color: var(--peach-pink);
+}
+
+.products-text h2 {
+    padding: 5px 0;
+
+}
+
+.products-text h2 a {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.products-price {
+    padding: 10px 0;
+}
+
+.products-price span {
+    color: var(--peach-pink);
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
 /* -----------header----------------- */
 .homepage-main-header {
     justify-content: center;
@@ -340,7 +422,7 @@
     padding: 20px;
 }
 
-.homepage-recommended-container .homepage-recommended-col {
+/* .homepage-recommended-col,.products-col{
     padding: 5px;
 }
 
@@ -419,7 +501,7 @@
     color: var(--peach-pink);
     font-size: 14px;
     line-height: 1.5em;
-}
+} */
 
 /* -------section-recommended 探索品牌--------- */
 .homepage-shops-container {
