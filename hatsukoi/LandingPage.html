@@ -28,6 +28,9 @@
 
                     <!-- 手機版產品分類 -->
                     <nav class="homepage-category-nav">
+                        <div class="homepage-login d-flex">
+                            <a href="#">登入 / 登出</a>
+                        </div>
                         <div class="homepage-member-block ">
                             <div class="homepage-list-title">
                                 <h1>我的會員帳號</h1>
@@ -56,6 +59,12 @@
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
                                     <div class="homepage-member-iconbox d-flex align-items-center">
+                                        <i class="fa-solid fa-bell"></i>
+                                    </div>
+                                    <span>通知中心</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <div class="homepage-member-iconbox d-flex align-items-center">
                                         <i class="fa-solid fa-user"></i>
                                     </div>
                                     <span>我的帳戶</span>
@@ -78,7 +87,7 @@
                                     </div>
                                     <span>我想在 hatsukoi 上販售</span>
                                 </a>
-                                
+
                             </div>
                         </div>
                         <div class="homepage-category-list">
@@ -414,11 +423,64 @@
                         id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 align-items-center">
                             <li class="homepage-nav-member-item p-2">
-                                <div class="homepage-nav-memberpic">
-                                    <a class="nav-link" href="#">
-                                        <img src="https://picsum.photos/20/20/?random=10" id="nav-member-pic" alt="">
-                                    </a>
-                                </div>
+                                <button class="homepage-nav-memberpic position-relative" type="button">
+                                    <img src="https://picsum.photos/200/200/?random=10" id="nav-member-pic" alt="">
+
+                                    <div class="homepage-member-block dropdown-menu position-absolute end-0">
+                                        <div class="homepage-member-account d-flex align-items-center">
+                                            <div class="homepage-member-name">
+                                                <a href="#" id="membername">Sherry Hsiao</a>
+                                                <a href="#">熱戀會員</a>
+                                            </div>
+                                        </div>
+                                        <div class="list-group homepage-member-list-group">
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                                <div class="homepage-member-iconbox d-flex align-items-center">
+                                                    <i class="fa-solid fa-file"></i>
+                                                </div>
+                                                <span>購買訂單</span>
+                                            </a>
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                                <div class="homepage-member-iconbox d-flex align-items-center">
+                                                    <i class="fa-solid fa-comment-dots"></i>
+                                                </div>
+                                                <span>我的訊息</span>
+                                            </a>
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                                <div class="homepage-member-iconbox d-flex align-items-center">
+                                                    <i class="fa-solid fa-bell"></i>
+                                                </div>
+                                                <span>通知中心</span>
+                                            </a>
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                                <div class="homepage-member-iconbox d-flex align-items-center">
+                                                    <i class="fa-solid fa-user"></i>
+                                                </div>
+                                                <span>我的帳戶</span>
+                                            </a>
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                                <div class="homepage-member-iconbox d-flex align-items-center">
+                                                    <i class="fa-solid fa-ticket"></i>
+                                                </div>
+                                                <span>我的優惠券</span>
+                                            </a>
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                                <div class="homepage-member-iconbox d-flex align-items-center">
+                                                    <i class="fa-solid fa-clock"></i>
+                                                </div>
+                                                <span>最近瀏覽</span>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </button>
+
                             </li>
                             <li class="homepage-nav-member-item p-1">
                                 <div class="homepage-nav-likelist">

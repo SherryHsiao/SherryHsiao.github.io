@@ -133,6 +133,18 @@
     height: 2px;
     background-color: var(--main-pink);
 }
+.homepage-nav-memberpic{
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50% 50% 50%;
+    border: none;
+    background-color: #fff;
+    
+}
+.homepage-nav-memberpic img {
+    width: 100%;
+    border-radius: 50% 50% 50% 50%;
+}
 
 .homepage-nav-member-block .nav-link i {
     font-size: 18px;
@@ -177,7 +189,7 @@
     transition: .5s;
 }
 
-/* -------手機產品分類nav------- */
+/* -------漢堡打開後 手機產品分類nav------- */
 .homepage-category-nav a {
     font-size: 14px;
     text-decoration: none;
@@ -191,31 +203,58 @@
     color: var(--dark-gray);
 }
 
-/* 會員帳號 */
-.homepage-member-block .homepage-member-account{
-    height: 100px;
-    background-color: var(--light-gray);
+.homepage-category-nav .homepage-login {
+    padding: 20px 0 10px 0;
+    justify-content: end;
 }
-.homepage-member-block .homepage-member-account .homepage-member-picbox{
+
+.homepage-category-nav .homepage-login a {
+    color: var(--light-gray);
+}
+
+/* 會員帳號 */
+.homepage-member-block .homepage-member-account {
+    height: 100px;
+    background-color: #FFF;
+    padding: 10px;
+    border-bottom: .5px solid #EAEDEF;
+}
+
+.homepage-member-block .homepage-member-account .homepage-member-picbox {
     width: 50px;
     height: 50px;
     margin: 0 10px;
 }
-.homepage-member-block .homepage-member-account .homepage-member-picbox img{
+
+.homepage-member-block .homepage-member-account .homepage-member-picbox img {
     width: 100%;
     vertical-align: middle;
     border-radius: 50% 50% 50% 50%;
 }
+
+.homepage-member-block .homepage-member-account .homepage-member-name #membername {
+    font-size: 16px;
+    color: var(--dark-gray);
+}
+
+.homepage-member-block .homepage-member-account .homepage-member-name #membername:hover {
+    color: var(--peach-pink);
+}
+
+.homepage-member-block .homepage-member-account .homepage-member-name a {
+    font-size: 12px;
+}
+
 .homepage-member-block .homepage-member-list-group {
     border-radius: 0%;
 }
 
-.homepage-member-block .homepage-member-list-group .list-group-item{
+.homepage-member-block .homepage-member-list-group .list-group-item {
     border: none;
     border-bottom: .5px solid #EAEDEF;
 }
 
-.homepage-member-block .homepage-member-list-group .list-group-item:last-child{
+.homepage-member-block .homepage-member-list-group .list-group-item:last-child {
     border-bottom: none;
 }
 
@@ -739,6 +778,8 @@ li {
         justify-content: left;
     }
 
+    
+
     .homepage-nav-items .homepage-nav-apply {
         font-weight: bold;
         font-size: 14px;
@@ -761,9 +802,33 @@ li {
         background-color: var(--main-pink);
         color: var(--light-pink);
     }
-
-    .homepage-nav-memberpic img {
-        border-radius: 50% 50% 50% 50%;
+    .homepage-nav-memberpic:hover .homepage-member-block{
+        display: block;
+    }
+    .homepage-member-block{
+        display: none;
+        width: 250px;
+        margin-top: 5px;
+    }
+    .homepage-member-block a{
+        color: var(--light-gray);
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .homepage-member-block a:hover{
+        color: var(--main-pink);
+    }
+    .homepage-member-block .homepage-member-account {
+        height: 60px;
+        padding: 20px;
+    }
+    .homepage-member-block .homepage-member-account #membername{
+        margin-right: 10px;
+        color: var(--light-pink);
+    }
+    .homepage-member-block .homepage-member-account.homepage-member-name{
+        display: flex;
+        flex-direction: column;
     }
 
     /* 電腦版分類畫面 */
