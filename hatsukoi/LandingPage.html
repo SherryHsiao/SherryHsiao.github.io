@@ -10,23 +10,25 @@
     <script src="https://kit.fontawesome.com/93adc92248.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="hatsukoi_homepage.css">
+    <link rel="stylesheet" href="hatsukoi_Header.css">
 </head>
 
 <body>
     <div class="homepage-container">
-        <!-- header -->
+        <!--------------- header ---------------------------------->
         <div class="homepage-main-header">
             <header class="homepage-navbar navbar row navbar-expand-lg bg-body-tertiary shadow-sm flex-column">
                 <input class="homepage-nav-checkbox" type="checkbox" name="" id="menu-control">
                 <div class="homepage-mainnav container-fluid">
-                    <!-- 手機版漢堡 -->
+                    <!-- #region 手機版漢堡 -->
                     <label for="menu-control" class="homepage-HB">
                         <span></span>
                         <span></span>
                         <span></span>
                     </label>
+                    <!-- #endregion -->
 
-                    <!-- 手機版產品分類 -->
+                    <!---------- 手機版產品分類(點漢堡會跳出的選單) -------------->
                     <nav class="homepage-category-nav">
                         <div class="homepage-login d-flex">
                             <a href="#">登入 / 登出</a>
@@ -366,28 +368,25 @@
                                         aria-labelledby="flush-heading12" data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body">
                                             <li><a href="#">數位繪畫 / 圖文設計</a></li>
-                                            <li><a href="#">教學 / 體驗</a></li>
                                             <li><a href="#">其他數位商品</a></li>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                     </nav>
 
-                    <!-- logo -->
+                    <!-------- 兩用logo ---------->
                     <a class="homepage-navlogo navbar-brand" href="#">
                         <img src="hatsukoiPics/hatsukoi_logo.png" alt="logo" width="150" height="40">
                     </a>
 
-                    <!-- 手機版購物車 -->
+                    <!-------- 手機版購物車 --------->
                     <div class="homepage-login-cart">
                         <a class="homepage-nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
 
-                    <!-- 電腦版搜尋 -->
+                    <!------------- 電腦版搜尋 ------------>
                     <div class="homepage-nav-search" id="search-pc">
                         <form class="d-flex " role="search">
                             <input class="form-control" type="search" placeholder="搜尋好設計、體驗活動" aria-label="Search">
@@ -405,11 +404,15 @@
                     </div>
 
 
-                    <!-- 優惠券和申請為賣家 -->
+                    <!-- 桌機 優惠券和申請為賣家-->
                     <div class="homepage-nav-items collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-1 mb-lg-0 align-items-center">
                             <li class="homepage-nav-item p-2">
                                 <a class="homepage-nav-apply nav-link" href="#">我想在hatukoi上販售</a>
+                            </li>
+                            <!-- 登出狀態下顯示 跟tom串 -->
+                            <li class="homepage-nav-item p-2 d-none" id="homepage-login-pc">
+                                <a class="homepage-nav-apply nav-link" href="#">登入 / 註冊</a>
                             </li>
                             <!-- 登入後才有優惠券 -->
                             <li class="homepage-nav-item p-2">
@@ -476,12 +479,16 @@
                                                 </div>
                                                 <span>最近瀏覽</span>
                                             </a>
-
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action d-flex justify-content-center">                            
+                                                <span>登出</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </button>
 
                             </li>
+                            <!-- 喜歡清單 -->
                             <li class="homepage-nav-member-item p-1">
                                 <div class="homepage-nav-likelist">
                                     <a class="nav-link position-relative" href="#">
@@ -490,6 +497,7 @@
 
                                 </div>
                             </li>
+                            <!-- 聊天室 -->
                             <li class="homepage-nav-member-item p-1">
                                 <div class="homepage-nav-msg">
                                     <a class="nav-link position-relative" href="#">
@@ -501,6 +509,7 @@
                                     </a>
                                 </div>
                             </li>
+                            <!-- 通知中心 -->
                             <li class="homepage-nav-member-item p-1">
                                 <div class="homepage-nav-notify">
                                     <a class="nav-link position-relative" href="#">
@@ -508,11 +517,11 @@
                                         <span
                                             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                             8
-                                            <span class="visually-hidden">unread messages</span>
                                         </span>
                                     </a>
                                 </div>
                             </li>
+                            <!-- 購物車 -->
                             <li class="homepage-nav-member-item p-1">
                                 <div class="homepage-nav-cart">
                                     <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -522,7 +531,7 @@
                     </div>
                 </div>
 
-                <!-- 手機版搜尋 -->
+                <!----------- 手機版搜尋 -------------->
                 <div class="homepage-nav-search" id="search-phone">
                     <form class="d-flex " role="search">
                         <input class="form-control" type="search" placeholder="搜尋好設計、體驗活動" aria-label="Search">
@@ -690,7 +699,6 @@
                             </div>
                             <ul class="category-second-list-pc">
                                 <li><a href="#">數位繪畫 / 圖文設計</a></li>
-                                <li><a href="#">教學 / 體驗</a></li>
                                 <li><a href="#">其他數位商品</a></li>
                             </ul>
                         </li>
@@ -1293,8 +1301,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                            </div>                            
+
+                            </div>
                         </div>
 
                         <div class="carousel-item">
@@ -1564,7 +1572,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
 
                     </div>
