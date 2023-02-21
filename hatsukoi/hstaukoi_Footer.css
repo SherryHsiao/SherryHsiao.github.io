@@ -37,8 +37,7 @@
     padding-top: 20px;
 }
 
-.homepage-footer-maininfo address a,
-li {
+.homepage-footer-maininfo li {
     padding: 5px 0;
     font-size: 14px;
 }
@@ -59,12 +58,13 @@ li {
     margin-right: 5px;
 }
 
-.homepage-footer-maininfo .homepage-social-icon .homepage-icon-box:hover {
+.homepage-footer-maininfo  .homepage-icon-box:hover,
+.homepage-footer-maininfo .homepage-qrcode button:hover {
     background-color: var(--peach-pink);
     border: .5px solid var(--peach-pink);
 }
 
-.homepage-footer-maininfo .homepage-social-icon .homepage-icon-box:hover a {
+.homepage-footer-maininfo  .homepage-icon-box:hover a {
     color: #FFFFFF;
 }
 
