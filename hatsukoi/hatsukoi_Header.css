@@ -69,6 +69,10 @@
     border: none;
 }
 
+.homepage-main-header .homepage-nav-search form button:hover{
+    background-color: var(--peach-pink);
+}
+
 .homepage-main-header .homepage-search-keyword {
     margin-top: 5px;
 }
