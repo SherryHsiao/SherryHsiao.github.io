@@ -13,6 +13,12 @@
     --light-pink: #FEF4F6;
 }
 
+.homepage-text-title h2{
+    font-weight: bold;
+    color: var(--main-pink);
+    font-size: 22px;
+}
+
 .carousel-control-next,
 .carousel-control-prev {
     padding: 0 10px;
@@ -95,12 +101,12 @@
     color: var(--peach-pink);
 }
 
-.products-text h2 {
+.products-text h3 {
     padding: 5px 0;
 
 }
 
-.products-text h2 a {
+.products-text h3 a {
     text-decoration: none;
     font-size: 16px;
 }

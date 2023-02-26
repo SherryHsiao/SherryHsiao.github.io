@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>hatsukoi homepage</title>
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/93adc92248.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="hatsukoi_homepage.css">
     <link rel="stylesheet" href="hatsukoi_Header.css">
     <link rel="stylesheet" href="hstaukoi_Footer.css">
@@ -83,6 +83,19 @@
                                         <i class="fa-solid fa-clock"></i>
                                     </div>
                                     <span>最近瀏覽</span>
+                                </a>
+                                <!-- 申請為賣家才有 -->
+                                <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <div class="homepage-member-iconbox d-flex align-items-center">
+                                        <i class="fa-solid fa-gear"></i>
+                                    </div>
+                                    <span>前往管理後台</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <div class="homepage-member-iconbox d-flex align-items-center">
+                                        <i class="fa-solid fa-house"></i>
+                                    </div>
+                                    <span>前往品牌首頁</span>
                                 </a>
                                 <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
                                     <div class="homepage-member-iconbox d-flex align-items-center">
@@ -453,7 +466,7 @@
                                                 </div>
                                                 <span>購買訂單</span>
                                             </a>
-                                            <a href="#"
+                                            <!-- <a href="#"
                                                 class="list-group-item list-group-item-action d-flex align-items-center">
                                                 <div class="homepage-member-iconbox d-flex align-items-center">
                                                     <i class="fa-solid fa-comment-dots"></i>
@@ -466,7 +479,7 @@
                                                     <i class="fa-solid fa-bell"></i>
                                                 </div>
                                                 <span>通知中心</span>
-                                            </a>
+                                            </a> -->
                                             <a href="#"
                                                 class="list-group-item list-group-item-action d-flex align-items-center">
                                                 <div class="homepage-member-iconbox d-flex align-items-center">
@@ -487,6 +500,20 @@
                                                     <i class="fa-solid fa-clock"></i>
                                                 </div>
                                                 <span>最近瀏覽</span>
+                                            </a>
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                                <div class="homepage-member-iconbox d-flex align-items-center">
+                                                    <i class="fa-solid fa-gear"></i>
+                                                </div>
+                                                <span>前往管理後台</span>
+                                            </a>
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                                <div class="homepage-member-iconbox d-flex align-items-center">
+                                                    <i class="fa-solid fa-house"></i>
+                                                </div>
+                                                <span>前往品牌首頁</span>
                                             </a>
                                             <div class="homepage-member-logout d-flex justify-content-center">
                                                 <a href="#" id="homepage-member-logout-pc">登出</a>
@@ -778,39 +805,14 @@
                                     <div class="homepage-recommended-card products-card">
                                         <div class="homepage-recommended-pic position-relative products-pic">
                                             <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <!-- Button 加入喜歡清單鈕 -->
+                                            <button type="button" onclick="Toast.fire('已將此商品加入喜歡清單')" class="btn position-absolute bottom-0 end-0"
+                                                data-bs-toggle="modal">
                                                 <i class="fa-regular fa-heart"></i>
                                             </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
+                                            <h3><a href="#">黃銅戒指</a></h3>
                                             <a href="#">Style Shop</a>
                                         </div>
                                         <div class="homepage-recommended-price products-price">
@@ -822,39 +824,14 @@
                                     <div class="homepage-recommended-card products-card">
                                         <div class="homepage-recommended-pic position-relative products-pic">
                                             <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <!-- Button 加入喜歡清單鈕 -->
+                                            <button type="button" onclick="Toast.fire('已將此商品加入喜歡清單')" class="btn position-absolute bottom-0 end-0"
+                                                data-bs-toggle="modal">
                                                 <i class="fa-regular fa-heart"></i>
                                             </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
+                                            <h3><a href="#">黃銅戒指</a></h3>
                                             <a href="#">Style Shop</a>
                                         </div>
                                         <div class="homepage-recommended-price products-price">
@@ -866,39 +843,14 @@
                                     <div class="homepage-recommended-card products-card">
                                         <div class="homepage-recommended-pic position-relative products-pic">
                                             <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <!-- Button 加入喜歡清單鈕 -->
+                                            <button type="button" onclick="Toast.fire('已將此商品加入喜歡清單')" class="btn position-absolute bottom-0 end-0"
+                                                data-bs-toggle="modal">
                                                 <i class="fa-regular fa-heart"></i>
                                             </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
+                                            <h3><a href="#">黃銅戒指</a></h3>
                                             <a href="#">Style Shop</a>
                                         </div>
                                         <div class="homepage-recommended-price products-price">
@@ -910,39 +862,14 @@
                                     <div class="homepage-recommended-card products-card">
                                         <div class="homepage-recommended-pic position-relative products-pic">
                                             <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <!-- Button 加入喜歡清單鈕 -->
+                                            <button type="button" onclick="Toast.fire('已將此商品加入喜歡清單')" class="btn position-absolute bottom-0 end-0"
+                                                data-bs-toggle="modal">
                                                 <i class="fa-regular fa-heart"></i>
                                             </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
+                                            <h3><a href="#">黃銅戒指</a></h3>
                                             <a href="#">Style Shop</a>
                                         </div>
                                         <div class="homepage-recommended-price products-price">
@@ -954,39 +881,14 @@
                                     <div class="homepage-recommended-card products-card">
                                         <div class="homepage-recommended-pic position-relative products-pic">
                                             <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <!-- Button 加入喜歡清單鈕 -->
+                                            <button type="button" onclick="Toast.fire('已將此商品加入喜歡清單')" class="btn position-absolute bottom-0 end-0"
+                                                data-bs-toggle="modal">
                                                 <i class="fa-regular fa-heart"></i>
                                             </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
+                                            <h3><a href="#">黃銅戒指</a></h3>
                                             <a href="#">Style Shop</a>
                                         </div>
                                         <div class="homepage-recommended-price products-price">
@@ -998,39 +900,14 @@
                                     <div class="homepage-recommended-card products-card">
                                         <div class="homepage-recommended-pic position-relative products-pic">
                                             <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <!-- Button 加入喜歡清單鈕 -->
+                                            <button type="button" onclick="Toast.fire('已將此商品加入喜歡清單')" class="btn position-absolute bottom-0 end-0"
+                                                data-bs-toggle="modal">
                                                 <i class="fa-regular fa-heart"></i>
                                             </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
+                                            <h3><a href="#">黃銅戒指</a></h3>
                                             <a href="#">Style Shop</a>
                                         </div>
                                         <div class="homepage-recommended-price products-price">
@@ -1049,36 +926,12 @@
                                     <div class="homepage-recommended-card products-card">
                                         <div class="homepage-recommended-pic position-relative products-pic">
                                             <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                                            <!-- Button 加入喜歡清單鈕 -->
+                                            <button type="button" onclick="Toast.fire('已將此商品加入喜歡清單')" class="btn position-absolute bottom-0 end-0"
+                                                data-bs-toggle="modal">
                                                 <i class="fa-regular fa-heart"></i>
                                             </button>
 
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="homepage-recommended-text products-text">
                                             <h2><a href="#">黃銅戒指</a></h2>
@@ -1089,226 +942,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
                             </div>
                         </div>
@@ -1319,256 +953,11 @@
                                     <div class="homepage-recommended-card products-card">
                                         <div class="homepage-recommended-pic position-relative products-pic">
                                             <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+                                            <!-- Button 加入喜歡清單鈕 -->
+                                            <button type="button" onclick="Toast.fire('已將此商品加入喜歡清單')" class="btn position-absolute bottom-0 end-0"
+                                                data-bs-toggle="modal">
                                                 <i class="fa-regular fa-heart"></i>
                                             </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="homepage-recommended-text products-text">
-                                            <h2><a href="#">黃銅戒指</a></h2>
-                                            <a href="#">Style Shop</a>
-                                        </div>
-                                        <div class="homepage-recommended-price products-price">
-                                            <span>$888</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="homepage-recommended-col col-6 col-md-4 col-lg-2 products-col">
-                                    <div class="homepage-recommended-card products-card">
-                                        <div class="homepage-recommended-pic position-relative products-pic">
-                                            <a href="#"><img src="https://picsum.photos/600/600/?random=10"></a>
-                                            <!-- Button trigger modal 加入喜歡清單鈕 -->
-                                            <button type="button" class="btn position-absolute bottom-0 end-0"
-                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </button>
-
-                                            <!-- Modal 已加入喜歡清單訊息-->
-                                            <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <div class="homepage-hatsukoi-iconbox">
-                                                                <img src="hatsukoiPics/hatsukoi_icon.svg"
-                                                                    class="rounded me-2" alt="">
-                                                            </div>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            已將此商品加入喜歡清單 !
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary btn-sm">前往喜歡清單</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="homepage-recommended-text products-text">
                                             <h2><a href="#">黃銅戒指</a></h2>
@@ -1642,7 +1031,7 @@
                                                 <div class="homepage-shops-btns">
                                                     <button type="button"
                                                         class="btn-explore btn btn-outline-secondary">即刻探索</button>
-                                                    <button type="button" class="btn-like btn btn-outline-secondary"><i
+                                                    <button type="button" onclick="Toast.fire('已關注此品牌')" class="btn-like btn btn-outline-secondary"><i
                                                             class="fa-regular fa-heart"></i></button>
                                                 </div>
                                             </div>
@@ -1673,7 +1062,7 @@
                                                 <div class="homepage-shops-btns">
                                                     <button type="button"
                                                         class="btn-explore btn btn-outline-secondary">即刻探索</button>
-                                                    <button type="button" class="btn-like btn btn-outline-secondary"><i
+                                                    <button type="button" onclick="Toast.fire('已關注此品牌')" class="btn-like btn btn-outline-secondary"><i
                                                             class="fa-regular fa-heart"></i></button>
                                                 </div>
                                             </div>
@@ -1704,7 +1093,7 @@
                                                 <div class="homepage-shops-btns">
                                                     <button type="button"
                                                         class="btn-explore btn btn-outline-secondary">即刻探索</button>
-                                                    <button type="button" class="btn-like btn btn-outline-secondary"><i
+                                                    <button type="button" onclick="Toast.fire('已關注此品牌')" class="btn-like btn btn-outline-secondary"><i
                                                             class="fa-regular fa-heart"></i></button>
                                                 </div>
                                             </div>
@@ -1864,10 +1253,27 @@
             </div>
         </footer>
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/93adc92248.js" crossorigin="anonymous"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'bottom-end',
+            showConfirmButton: false,
+            timer: 1800,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+    </script>
 </body>
 
 </html>
