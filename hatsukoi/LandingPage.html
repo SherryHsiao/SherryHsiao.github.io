@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="hatsukoi_homepage.css">
     <link rel="stylesheet" href="hatsukoi_Header.css">
     <link rel="stylesheet" href="hstaukoi_Footer.css">
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 <body>
@@ -409,11 +410,22 @@
                     </div>
 
                     <!------------- 電腦版搜尋 ------------>
-                    <div class="homepage-nav-search" id="search-pc">
-                        <form class="d-flex " role="search">
-                            <input class="form-control" type="search" placeholder="搜尋好設計、體驗活動" aria-label="Search">
+                    <div class="homepage-nav-search position-relative" id="search-pc">
+                        <form @submit.prevent="search" class="d-flex" role="search">
+                            <input @click="visibleHandle" v-model="searchInput" class="form-control" type="search" placeholder="搜尋好設計、體驗活動" aria-label="Search">
                             <button class="btn btn-outline-secondary" type="submit">搜尋</button>
                         </form>
+                        <div class="homepage-search-block" v-show="isVisible">
+                            <div class="search-list-group list-group position-absolute w-100">
+                                <p class="list-group-item d-flex align-items-center m-0"><i class="fa-solid fa-clock-rotate-left"></i>您曾搜尋過</p>
+                                <a href="#" v-for="record in filteredRecs" :key="record" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
+                                    {{ record }}
+                                    <button class="btn btn-close btn-sm" @click="remove(record)"></button>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        
                         <div class="homepage-search-keyword">
                             <ul class="p-0 m-0">
                                 <li><a href="#">底片相機</a></li>
@@ -567,11 +579,21 @@
                 </div>
 
                 <!----------- 手機版搜尋 -------------->
-                <div class="homepage-nav-search" id="search-phone">
-                    <form class="d-flex " role="search">
-                        <input class="form-control" type="search" placeholder="搜尋好設計、體驗活動" aria-label="Search">
+                <div class="homepage-nav-search position-relative" id="search-phone">
+                    <form @submit.prevent="search" class="d-flex " role="search">
+                        <input @click="visibleHandle" v-model="searchInput" class="form-control" type="search" placeholder="搜尋好設計、體驗活動" aria-label="Search">
                         <button class="btn btn-outline-secondary" type="submit">搜尋</button>
                     </form>
+                    <!-- 新加的 -->
+                    <div class="homepage-search-block" v-show="isVisible">
+                        <div class="search-list-group list-group position-absolute w-100">
+                            <p class="list-group-item d-flex align-items-center m-0"><i class="fa-solid fa-clock-rotate-left"></i>您曾搜尋過</p>
+                            <a href="#" v-for="record in filteredRecs" :key="record" class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
+                                {{ record }}
+                                <button class="btn btn-close btn-sm" @click="remove(record)"></button>
+                            </a>
+                        </div>
+                    </div>
                     <div class="homepage-search-keyword">
                         <ul class="p-0 m-0">
                             <li><a href="#">底片相機</a></li>
@@ -1927,6 +1949,92 @@
                 toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
         })
+
+        const app = Vue.createApp({
+            data() {
+                return {
+                    isVisible: false,
+                    searchInput: '',
+                    records: [],
+                }
+            },
+            methods: {
+                visibleHandle() {
+                    this.isVisible = !this.isVisible
+                },
+                search() {
+                    if (this.searchInput.trim() != '') {
+                        this.records.unshift(this.searchInput)
+                        this.searchInput = ''
+                        this.save()
+                    }
+                },
+                save() {
+                    localStorage.setItem('search-records', JSON.stringify(this.records))
+                },
+                remove(record) {
+                    this.records.splice(this.records.indexOf(record), 1)
+                    this.save()
+                },
+            },
+            computed: {
+                filteredRecs() {
+                    return this.records.slice(0, 6)
+                },
+            },
+            mounted() {
+                const records = localStorage.getItem('search-records')
+                if (records) {
+                    this.records = JSON.parse(records)
+                    this.records = this.records.slice(0, 6) // 取出最新的6筆搜尋紀錄
+                }
+            },
+        })
+
+        app.mount('#search-pc')
+
+        const appPhone = Vue.createApp({
+            data() {
+                return {
+                    isVisible: false,
+                    searchInput: '',
+                    records: [],
+                }
+            },
+            methods: {
+                visibleHandle() {
+                    this.isVisible = !this.isVisible
+                },
+                search() {
+                    if (this.searchInput.trim() != '') {
+                        this.records.unshift(this.searchInput)
+                        this.searchInput = ''
+                        this.save()
+                    }
+                },
+                save() {
+                    localStorage.setItem('search-records', JSON.stringify(this.records))
+                },
+                remove(record) {
+                    this.records.splice(this.records.indexOf(record), 1)
+                    this.save()
+                },
+            },
+            computed: {
+                filteredRecs() {
+                    return this.records.slice(0, 6)
+                },
+            },
+            mounted() {
+                const records = localStorage.getItem('search-records')
+                if (records) {
+                    this.records = JSON.parse(records)
+                    this.records = this.records.slice(0, 6) // 取出最新的6筆搜尋紀錄
+                }
+            },
+        })
+
+        appPhone.mount('#search-phone')
     </script>
 </body>
 

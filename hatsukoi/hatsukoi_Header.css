@@ -13,6 +13,27 @@
     color: var(--dark-gray);
 }
 
+/* 新加的 */
+.search-list-group{
+    margin-top: 6px;
+    font-size: 14px;
+}
+.search-list-group i{
+    padding-right: 5px;
+}
+.search-list-group p{
+    color: var(--main-pink);
+    font-weight: bolder;
+}
+
+.search-list-group a{
+    color: var(--dark-gray);
+}
+
+.search-list-group a:hover{
+    color: var(--light-gray);
+}
+
 /* -----------header----------------- */
 .homepage-main-header {
     justify-content: center;
@@ -130,6 +151,7 @@
 }
 
 .homepage-category-nav {
+    z-index: 90;
     position: absolute;
     background-color: var(--light-pink);
     width: 70%;
@@ -338,6 +360,12 @@
 
 /* 桌機 */
 @media screen and (min-width:1200px) {
+
+    .search-list-group{
+        z-index: 50;
+        
+    }
+
     .homepage-HB {
         display: none;
     }
